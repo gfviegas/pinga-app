@@ -16,6 +16,7 @@
 		234E75DC233AE2C100C1F823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234E75DA233AE2C100C1F823 /* LaunchScreen.storyboard */; };
 		234E75E7233AE2C200C1F823 /* PingaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75E6233AE2C200C1F823 /* PingaTests.swift */; };
 		234E75F2233AE2C200C1F823 /* PingaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75F1233AE2C200C1F823 /* PingaUITests.swift */; };
+		234E7600233AE3ED00C1F823 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75FF233AE3ED00C1F823 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		234E75ED233AE2C200C1F823 /* PingaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PingaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		234E75F1233AE2C200C1F823 /* PingaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingaUITests.swift; sourceTree = "<group>"; };
 		234E75F3233AE2C200C1F823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		234E75FF233AE3ED00C1F823 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				234E75D8233AE2C100C1F823 /* Assets.xcassets */,
 				234E75DA233AE2C100C1F823 /* LaunchScreen.storyboard */,
 				234E75DD233AE2C100C1F823 /* Info.plist */,
+				234E75FF233AE3ED00C1F823 /* GradientView.swift */,
 			);
 			path = Pinga;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				234E75D4233AE2C100C1F823 /* SecondViewController.swift in Sources */,
 				234E75D2233AE2C100C1F823 /* FirstViewController.swift in Sources */,
+				234E7600233AE3ED00C1F823 /* GradientView.swift in Sources */,
 				234E75CE233AE2C100C1F823 /* AppDelegate.swift in Sources */,
 				234E75D0233AE2C100C1F823 /* SceneDelegate.swift in Sources */,
 			);

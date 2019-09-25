@@ -1,67 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Conexão-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bluetooth" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                <rect key="frame" x="20" y="20" width="149" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" lineBreakMode="wordWrap" numberOfLines="7" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="20" y="73" width="335" height="100.5"/>
+                                <string key="text">Configure a conexão Bluetooth com a placa para posteriormente configurar a conexão da placa com a rede Wi-Fi.
+
+O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-E9-Tzq">
+                                <rect key="frame" x="221" y="26.5" width="134" height="30"/>
+                                <state key="normal" title="Conectar Bluetooth"/>
+                                <connections>
+                                    <segue destination="7Jt-to-UZj" kind="show" id="OpI-5a-lKe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectado ao dispositivo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zED-T3-gzT">
+                                <rect key="frame" x="95" y="203.5" width="185.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESP-32 de Viegas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-vg-cyq">
+                                <rect key="frame" x="126.5" y="226.5" width="122" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wi-Fi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9u-65-WJf">
+                                <rect key="frame" x="20" y="332" width="84.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pp-4t-VtB">
+                                <rect key="frame" x="20" y="385" width="335" height="67"/>
+                                <string key="text">Configure a conexão Wi-Fi da placa para que os dados possam ser enviados corretamente.
+
+O status da conexão é exibido abaixo.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X87-wn-qsb">
+                                <rect key="frame" x="251" y="335" width="104" height="30"/>
+                                <state key="normal" title="Conectar Wi-Fi"/>
+                                <connections>
+                                    <segue destination="CqG-M9-DHy" kind="show" id="YeZ-cx-2ZA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="5El-e9-oEJ"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="10" id="HC2-Xf-hLV"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="1nT-E9-Tzq" secondAttribute="trailing" constant="20" id="IXG-WP-gJO"/>
+                            <constraint firstItem="1nT-E9-Tzq" firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="MHm-4Q-ARP"/>
+                            <constraint firstItem="1PE-vg-cyq" firstAttribute="top" secondItem="zED-T3-gzT" secondAttribute="bottom" constant="5" id="N2Y-hK-NiM"/>
+                            <constraint firstItem="zED-T3-gzT" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="30" id="PkY-0z-NMa"/>
+                            <constraint firstItem="1PE-vg-cyq" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Q4q-hh-dib"/>
+                            <constraint firstItem="a9u-65-WJf" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="155" id="Wl0-Ak-xUw"/>
+                            <constraint firstItem="1pp-4t-VtB" firstAttribute="top" secondItem="a9u-65-WJf" secondAttribute="bottom" constant="10" id="X2H-WB-MgY"/>
+                            <constraint firstAttribute="trailing" secondItem="A5M-7J-77L" secondAttribute="trailing" constant="20" id="e2R-Kt-Dqc"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="hjU-aK-aQR"/>
+                            <constraint firstItem="1pp-4t-VtB" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="p2N-bm-cwh"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="X87-wn-qsb" secondAttribute="trailing" constant="20" id="smj-YX-AYb"/>
+                            <constraint firstItem="X87-wn-qsb" firstAttribute="centerY" secondItem="a9u-65-WJf" secondAttribute="centerY" id="tgx-6W-7Eh"/>
+                            <constraint firstAttribute="trailing" secondItem="1pp-4t-VtB" secondAttribute="trailing" constant="20" id="uVi-YI-xiP"/>
+                            <constraint firstItem="zED-T3-gzT" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ybG-mf-PYc"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="z6P-Lq-hIp"/>
+                            <constraint firstItem="a9u-65-WJf" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="zJl-sZ-aqR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Conexão" image="wifi" catalog="system" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="748" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--View Controller-->
+        <scene sceneID="pcc-n2-Wmr">
+            <objects>
+                <viewController id="CqG-M9-DHy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Bg-M9-wwa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurar Wi-FI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxA-oi-Iwx">
+                                <rect key="frame" x="20" y="20" width="221.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID da Rede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-GT-Zda">
+                                <rect key="frame" x="20" y="87" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha da Rede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO6-iE-hZf">
+                                <rect key="frame" x="20" y="141" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-Vl-w57">
+                                <rect key="frame" x="140" y="240" width="90" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Conectar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pPI-GT-Zda" firstAttribute="top" secondItem="RxA-oi-Iwx" secondAttribute="bottom" constant="30" id="0Ns-rI-g1F"/>
+                            <constraint firstItem="RxA-oi-Iwx" firstAttribute="top" secondItem="wAA-Og-hUx" secondAttribute="top" constant="20" id="5dH-1M-h24"/>
+                            <constraint firstItem="MO6-iE-hZf" firstAttribute="top" secondItem="pPI-GT-Zda" secondAttribute="bottom" constant="20" id="7fg-MP-Pw3"/>
+                            <constraint firstItem="pPI-GT-Zda" firstAttribute="height" secondItem="MO6-iE-hZf" secondAttribute="height" id="AAb-PW-yY7"/>
+                            <constraint firstItem="VXW-Vl-w57" firstAttribute="top" secondItem="MO6-iE-hZf" secondAttribute="bottom" constant="65" id="Fkf-PV-jOT"/>
+                            <constraint firstItem="VXW-Vl-w57" firstAttribute="centerX" secondItem="3Bg-M9-wwa" secondAttribute="centerX" id="KOs-Ua-WTu"/>
+                            <constraint firstItem="wAA-Og-hUx" firstAttribute="trailing" secondItem="pPI-GT-Zda" secondAttribute="trailing" constant="20" id="ODI-Vx-V67"/>
+                            <constraint firstItem="pPI-GT-Zda" firstAttribute="width" secondItem="MO6-iE-hZf" secondAttribute="width" id="QUo-2O-58q"/>
+                            <constraint firstItem="RxA-oi-Iwx" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="XmO-Rx-5eS"/>
+                            <constraint firstItem="wAA-Og-hUx" firstAttribute="trailing" secondItem="MO6-iE-hZf" secondAttribute="trailing" constant="20" id="guK-oo-8gg"/>
+                            <constraint firstItem="MO6-iE-hZf" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="hWP-X4-C7Q"/>
+                            <constraint firstItem="pPI-GT-Zda" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="m3G-cE-gzg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wAA-Og-hUx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ahU-uo-Vmv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWL-HP-bX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="-985.45727136431788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QyU-sJ-6gL">
+            <objects>
+                <viewController id="7Jt-to-UZj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pDx-Rt-u4w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HZc-cy-AZx">
+                                <rect key="frame" x="0.0" y="63" width="375" height="584"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wB1-PN-ITP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wB1-PN-ITP" id="w5k-iS-cxA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecionar Dispositivo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eve-a5-9nW">
+                                <rect key="frame" x="20" y="12" width="293.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HZc-cy-AZx" firstAttribute="top" secondItem="eve-a5-9nW" secondAttribute="bottom" constant="14" id="1MU-v2-2ft"/>
+                            <constraint firstItem="HZc-cy-AZx" firstAttribute="leading" secondItem="ub4-XP-ah2" secondAttribute="leading" id="IiT-yB-Yzk"/>
+                            <constraint firstItem="eve-a5-9nW" firstAttribute="top" secondItem="ub4-XP-ah2" secondAttribute="top" constant="12" id="RID-7X-Tws"/>
+                            <constraint firstItem="HZc-cy-AZx" firstAttribute="centerX" secondItem="pDx-Rt-u4w" secondAttribute="centerX" id="TnV-x5-Snp"/>
+                            <constraint firstItem="HZc-cy-AZx" firstAttribute="bottom" secondItem="ub4-XP-ah2" secondAttribute="bottom" id="dLV-eK-1zx"/>
+                            <constraint firstItem="eve-a5-9nW" firstAttribute="leading" secondItem="ub4-XP-ah2" secondAttribute="leading" constant="20" id="hy5-FQ-r8N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ub4-XP-ah2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kpY-Rw-Vq7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jls-cq-75W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="-320.68965517241384"/>
+        </scene>
+        <!--Análise-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="86.5" y="312" width="202" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="80" y="363" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
@@ -70,11 +230,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Análise" image="chart.pie.fill" catalog="system" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Mais-->
+        <scene sceneID="dbe-0M-kGy">
+            <objects>
+                <viewController id="6d5-gQ-fIR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKv-xq-GAl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lPX-0Z-gl5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mais" image="ellipsis.circle.fill" catalog="system" id="anl-fv-yll"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBr-mG-Dhi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="1123"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -88,15 +264,17 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="6d5-gQ-fIR" kind="relationship" relationship="viewControllers" id="HYb-XV-NYB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-603" y="360"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="wifi" catalog="system" width="64" height="46"/>
     </resources>
 </document>
