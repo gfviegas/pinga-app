@@ -12,7 +12,7 @@ import UIKit
 struct infoData {
     let icon: UIImage?
     let name: String?
-    let value: String?
+    var value: String?
 }
 
 class InfoTableViewController: UITableViewController {    
@@ -22,12 +22,18 @@ class InfoTableViewController: UITableViewController {
         super.viewDidLoad()
         
         let bluetoothIcon = UIImage(named: "Bluetooth")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        
+
         infos = [
             infoData(icon: UIImage(systemName: "info.circle.fill"), name: "Versão", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String),
             infoData(icon: bluetoothIcon, name: "Conectado a Placa", value: "Não"),
             infoData(icon: UIImage(systemName: "wifi"), name: "Placa Conectada", value: "Não")
         ]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(BluetoothManager.shared.connected)
+        infos[1].value = BluetoothManager.shared.connected ? "Sim" : "Não"
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

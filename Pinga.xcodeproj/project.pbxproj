@@ -17,6 +17,7 @@
 		234E7602233BFFF800C1F823 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 234E7601233BFFF800C1F823 /* Podfile */; };
 		234E7606233C0F3000C1F823 /* TimeAvailableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E7605233C0F3000C1F823 /* TimeAvailableEntry.swift */; };
 		234E760A233C3D3F00C1F823 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E7609233C3D3F00C1F823 /* InfoTableViewController.swift */; };
+		239AC51E234265EA00B870DD /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239AC51D234265EA00B870DD /* BluetoothManager.swift */; };
 		23A3F96C233C48A100AC4F25 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96B233C48A100AC4F25 /* InfoTableViewCell.swift */; };
 		23A3F96E233D2EF000AC4F25 /* BLEDevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96D233D2EF000AC4F25 /* BLEDevicesTableViewController.swift */; };
 		23A3F970233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */; };
@@ -80,6 +81,7 @@
 		234E7601233BFFF800C1F823 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		234E7605233C0F3000C1F823 /* TimeAvailableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAvailableEntry.swift; sourceTree = "<group>"; };
 		234E7609233C3D3F00C1F823 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		239AC51D234265EA00B870DD /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		23A3F96B233C48A100AC4F25 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		23A3F96D233D2EF000AC4F25 /* BLEDevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDevicesTableViewController.swift; sourceTree = "<group>"; };
 		23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDevicesTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				23A3F96D233D2EF000AC4F25 /* BLEDevicesTableViewController.swift */,
 				23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */,
 				23A3F981233E868400AC4F25 /* ConnectionViewController.swift */,
+				239AC51D234265EA00B870DD /* BluetoothManager.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			files = (
 				234E760A233C3D3F00C1F823 /* InfoTableViewController.swift in Sources */,
 				23A3F98C233EA2CF00AC4F25 /* StatsTableViewCell.swift in Sources */,
+				239AC51E234265EA00B870DD /* BluetoothManager.swift in Sources */,
 				23A3F984233E86BC00AC4F25 /* StatsViewController.swift in Sources */,
 				23A3F982233E868400AC4F25 /* ConnectionViewController.swift in Sources */,
 				23A3F96C233C48A100AC4F25 /* InfoTableViewCell.swift in Sources */,

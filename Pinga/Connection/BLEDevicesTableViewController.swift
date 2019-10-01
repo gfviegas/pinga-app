@@ -10,53 +10,74 @@ import Foundation
 import UIKit
 import CoreBluetooth
 
-struct BLEDevice {
-    let name: String
-    let address: String?
-}
+class BLEDevicesTableViewController: UITableViewController, BluetoothManagerDelegate {
+    var parentView: ConnectionViewController? = nil
+    var manager: CBCentralManager! = BluetoothManager.shared.manager
 
-class BLEDevicesTableViewController: UITableViewController, CBCentralManagerDelegate {
-    
-    var peripherals:[CBPeripheral] = []
-    
-    var manager:CBCentralManager!
-    var parentView:ConnectionViewController? = nil
-    var devices: [BLEDevice] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        manager = CBCentralManager(delegate: self, queue: nil)
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        
+        if (manager.state == .poweredOn) {
+            BluetoothManager.shared.scanBLE()
+        }
+        
+        BluetoothManager.shared.delegate = self
     }
     
-    func scanBLE() {
-        manager?.scanForPeripherals(withServices: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.stopBLEScan()
-        }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+        
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return BluetoothManager.shared.devices.count
+    }
+        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> BLEDevicesTableViewCell {
+        let cellIdentifier = "BLEDeviceTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BLEDevicesTableViewCell
+
+        let device = BluetoothManager.shared.devices[indexPath.row]
+        
+        cell.name?.text = device.name ?? "Dispositivo sem nome"
+        cell.address?.text = String(device.identifier.hashValue)
+
+        return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = BluetoothManager.shared.devices[indexPath.row]
+        print(device)
+        
+        let alert = UIAlertController(title: "Conectando", message: "Conectando-se com o dispositivo \(String(describing: device.name ?? ""))", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        manager.connect(device)
+    }
     
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print(peripheral)
-
-        if (!peripherals.contains(peripheral)) {
-            devices.append(BLEDevice(name: peripheral.name ?? "Dispositivo sem nome", address: peripheral.identifier.uuidString))
-        }
-
-
+    func didConnect(peripheral device: CBPeripheral) {
+        dismiss(animated: false, completion: { () -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+    }
+    
+    func didDiscover(peripheral _: CBPeripheral) {
         self.tableView.reloadData()
     }
     
-    func stopBLEScan() {
-        print("Scan finalizado")
-        manager?.stopScan()
+    func stoppedDiscover() {
+        print("Scan finalizado mesmo.")
         self.refreshControl?.endRefreshing()
     }
     
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
+    func didUpdateState(newState state: CBManagerState) {
+        switch state {
           case .unknown:
             print("central.state is .unknown")
           case .resetting:
@@ -69,37 +90,22 @@ class BLEDevicesTableViewController: UITableViewController, CBCentralManagerDele
             print("central.state is .poweredOff")
           case .poweredOn:
             print("central.state is .poweredOn")
-            scanBLE()
+            BluetoothManager.shared.scanBLE()
         @unknown default:
             print("Unknown")
         }
-
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-        
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return devices.count
-    }
-        
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> BLEDevicesTableViewCell {
-        let cellIdentifier = "BLEDeviceTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BLEDevicesTableViewCell
-
-        
-        let device = devices[indexPath.row]
-        
-        cell.name?.text = device.name
-        cell.address?.text = device.address
-
-        return cell
     }
     
     @objc
     func refresh(sender:AnyObject) {
-        self.scanBLE()
+        BluetoothManager.shared.devices.removeAll()
+        BluetoothManager.shared.scanBLE()
         self.tableView.reloadData()
+    }
+}
+
+extension BLEDevicesTableViewController: CBPeripheralDelegate {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print(error ?? "Sucesso")
     }
 }
