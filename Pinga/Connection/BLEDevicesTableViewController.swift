@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 import CoreBluetooth
 
-class BLEDevicesTableViewController: UITableViewController, BluetoothManagerDelegate {
+class BLEDevicesTableViewController: UITableViewController {
     var parentView: ConnectionViewController? = nil
     var manager: CBCentralManager! = BluetoothManager.shared.manager
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +25,24 @@ class BLEDevicesTableViewController: UITableViewController, BluetoothManagerDele
         if (manager.state == .poweredOn) {
             BluetoothManager.shared.scanBLE()
         }
+
+        NotificationCenter.default.addObserver(forName: .DidDiscover, object: nil, queue: nil) { (notification) in
+            self.didDiscover()
+        }
         
-        BluetoothManager.shared.delegate = self
+        NotificationCenter.default.addObserver(forName: .StoppedDiscover, object: nil, queue: nil) { (notification) in
+            self.stoppedDiscover()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .DidConnect, object: nil, queue: nil) { (notification) in
+            let device: CBPeripheral = notification.object as! CBPeripheral
+            self.didConnect(peripheral: device)
+        }
+        
+        NotificationCenter.default.addObserver(forName: .DidUpdateState, object: nil, queue: nil) { (notification) in
+            let state = notification.object as! CBManagerState
+            self.didUpdateState(newState: state)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,14 +81,24 @@ class BLEDevicesTableViewController: UITableViewController, BluetoothManagerDele
         manager.connect(device)
     }
     
-    func didConnect(peripheral device: CBPeripheral) {
-        dismiss(animated: false, completion: { () -> Void in
-            self.navigationController?.popViewController(animated: true)
-        })
+    func didDiscover() {
+        self.tableView.reloadData()
     }
     
-    func didDiscover(peripheral _: CBPeripheral) {
-        self.tableView.reloadData()
+    func didConnect(peripheral device: CBPeripheral) {
+//        dismiss(animated: false, completion: { () -> Void in
+//            let alert = UIAlertController(title: "Salvar Dispositivo", message: "Você deseja salvar este dispositivo para se conectar automaticamente?", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Não", style: .destructive, handler: { (field) in
+//                self.dismissView()
+//            }))
+//            alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { (field) in
+//                self.saveDevice()
+//            }))
+//
+//            self.present(alert, animated: true, completion: nil)
+//        })
+        self.dismissView()
     }
     
     func stoppedDiscover() {
@@ -94,6 +124,17 @@ class BLEDevicesTableViewController: UITableViewController, BluetoothManagerDele
         @unknown default:
             print("Unknown")
         }
+    }
+    
+    func saveDevice() {
+        // Salva dispositivo
+        self.dismissView()
+    }
+    
+    func dismissView() {
+        dismiss(animated: false, completion: { () -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @objc

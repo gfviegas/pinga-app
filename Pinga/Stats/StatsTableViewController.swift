@@ -8,27 +8,26 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 struct StatsListItem {
     let title: String!
     var icon: UIImage = UIImage(systemName: "chevron.right")!
+    let identifier: String!
+    let controller: Any
 }
 
 class StatsTableViewController: UITableViewController {
     var items: [StatsListItem] = [
-        StatsListItem(title: "Disponibilidade"),
-        StatsListItem(title: "Qualidade da Conexão"),
-        StatsListItem(title: "Confiabilidade")
+        StatsListItem(title: "Disponibilidade Semanal", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
+        StatsListItem(title: "Disponibilidade no Dia", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
+        StatsListItem(title: "Qualidade", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
+        StatsListItem(title: "Velocidade", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self)
     ]
+    //    let sb: UIStoryboard! = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        loadTable()
-    }
-    
-    func loadTable() {
-        
+        self.navigationItem.backBarButtonItem?.title = "Voltar"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,4 +50,9 @@ class StatsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        let viewController = self.storyboard!.instantiateViewController(identifier: item.identifier)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

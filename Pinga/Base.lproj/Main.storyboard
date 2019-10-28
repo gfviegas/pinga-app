@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RUN-kF-NXv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
-                                <segments>
-                                    <segment title="Bluetooth"/>
-                                    <segment title="Wi-Fi"/>
-                                </segments>
-                                <color key="tintColor" name="Yellow"/>
-                                <color key="selectedSegmentTintColor" name="Primary"/>
-                                <connections>
-                                    <action selector="indexChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="arG-hy-lfP"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yl9-qZ-0Aa">
                                 <rect key="frame" x="0.0" y="36" width="375" height="538"/>
                                 <subviews>
@@ -37,6 +25,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bT-gX-QGO">
+                                        <rect key="frame" x="251" y="16.5" width="104" height="30"/>
+                                        <state key="normal" title="Conectar Wi-Fi">
+                                            <color key="titleColor" name="Cyan"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BOr-je-pgk" kind="show" id="HRH-M0-oWc"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1V-xA-Wtu">
                                         <rect key="frame" x="20" y="73" width="335" height="67"/>
                                         <string key="text">Configure a conexão Wi-Fi da placa para que os dados possam ser enviados corretamente.
@@ -46,26 +43,49 @@ O status da conexão é exibido abaixo.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bT-gX-QGO">
-                                        <rect key="frame" x="251" y="16.5" width="104" height="30"/>
-                                        <state key="normal" title="Conectar Wi-Fi">
-                                            <color key="titleColor" name="Green"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectado a rede:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2m-35-zgi">
+                                        <rect key="frame" x="80" y="160" width="215" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI-UFV2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-U5-eGo">
+                                        <rect key="frame" x="80" y="188" width="215" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIM-KT-CfZ">
+                                        <rect key="frame" x="20" y="226" width="335" height="30"/>
+                                        <color key="backgroundColor" name="Blue"/>
+                                        <state key="normal" title="Testar Conectividade">
+                                            <color key="titleColor" red="0.90196078430000004" green="0.91764705879999997" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="CqG-M9-DHy" kind="show" id="yR2-ST-nmk"/>
+                                            <action selector="testWiFiConnection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="42E-VC-p5t"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="e1V-xA-Wtu" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="20" id="BxD-UU-KWT"/>
-                                    <constraint firstItem="7bT-gX-QGO" firstAttribute="centerY" secondItem="pHh-8z-3f6" secondAttribute="centerY" id="WAS-h6-Qy2"/>
-                                    <constraint firstItem="e1V-xA-Wtu" firstAttribute="top" secondItem="pHh-8z-3f6" secondAttribute="bottom" constant="20" id="a7h-3G-3Hy"/>
-                                    <constraint firstItem="pHh-8z-3f6" firstAttribute="top" secondItem="Yl9-qZ-0Aa" secondAttribute="top" constant="10" id="eGz-jn-Xs2"/>
-                                    <constraint firstAttribute="trailing" secondItem="7bT-gX-QGO" secondAttribute="trailing" constant="20" id="jaM-5h-38Q"/>
-                                    <constraint firstItem="e1V-xA-Wtu" firstAttribute="centerX" secondItem="Yl9-qZ-0Aa" secondAttribute="centerX" id="y0t-df-R3Y"/>
-                                    <constraint firstItem="pHh-8z-3f6" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="20" id="yfX-8o-bI5"/>
-                                    <constraint firstAttribute="trailing" secondItem="e1V-xA-Wtu" secondAttribute="trailing" constant="20" id="yxj-HY-05C"/>
+                                    <constraint firstItem="CQL-U5-eGo" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="80" id="975-54-VGy"/>
+                                    <constraint firstAttribute="trailing" secondItem="7bT-gX-QGO" secondAttribute="trailing" constant="20" id="9q4-eT-Jgs"/>
+                                    <constraint firstAttribute="trailing" secondItem="CQL-U5-eGo" secondAttribute="trailing" constant="80" id="9z7-xN-IZP"/>
+                                    <constraint firstItem="g2m-35-zgi" firstAttribute="top" secondItem="e1V-xA-Wtu" secondAttribute="bottom" constant="20" id="ErM-aL-pc8"/>
+                                    <constraint firstItem="e1V-xA-Wtu" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="20" id="GCt-zd-XHj"/>
+                                    <constraint firstItem="HIM-KT-CfZ" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="20" id="JoH-Vm-geB"/>
+                                    <constraint firstAttribute="trailing" secondItem="g2m-35-zgi" secondAttribute="trailing" constant="80" id="Lva-bg-Lt2"/>
+                                    <constraint firstItem="CQL-U5-eGo" firstAttribute="top" secondItem="g2m-35-zgi" secondAttribute="bottom" constant="10" id="eSh-ij-a56"/>
+                                    <constraint firstAttribute="trailing" secondItem="HIM-KT-CfZ" secondAttribute="trailing" constant="20" id="gPj-ds-PwP"/>
+                                    <constraint firstItem="HIM-KT-CfZ" firstAttribute="top" secondItem="CQL-U5-eGo" secondAttribute="bottom" constant="20" id="jLm-e3-5G8"/>
+                                    <constraint firstItem="CQL-U5-eGo" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="80" id="lAG-aP-hFy"/>
+                                    <constraint firstAttribute="trailing" secondItem="e1V-xA-Wtu" secondAttribute="trailing" constant="20" id="pSB-y4-CS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="CQL-U5-eGo" secondAttribute="trailing" constant="80" id="rka-jY-wWH"/>
+                                    <constraint firstItem="pHh-8z-3f6" firstAttribute="top" secondItem="Yl9-qZ-0Aa" secondAttribute="top" constant="10" id="sOs-08-fEH"/>
+                                    <constraint firstItem="g2m-35-zgi" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="80" id="sgx-ea-0TU"/>
+                                    <constraint firstItem="pHh-8z-3f6" firstAttribute="leading" secondItem="Yl9-qZ-0Aa" secondAttribute="leading" constant="20" id="t8I-DQ-ovi"/>
+                                    <constraint firstItem="e1V-xA-Wtu" firstAttribute="top" secondItem="pHh-8z-3f6" secondAttribute="bottom" constant="20" id="uzB-3k-4Bp"/>
+                                    <constraint firstItem="7bT-gX-QGO" firstAttribute="centerY" secondItem="pHh-8z-3f6" secondAttribute="centerY" id="wVz-bk-tiU"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSK-x4-Bc6">
@@ -85,14 +105,14 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectado ao dispositivo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4O-c1-aDD">
-                                        <rect key="frame" x="95" y="218.5" width="185.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectado ao dispositivo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4O-c1-aDD">
+                                        <rect key="frame" x="40" y="193.5" width="295" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESP-32 de Viegas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl3-ih-9Lu">
-                                        <rect key="frame" x="126.5" y="244.5" width="122" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESP-32 de Viegas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl3-ih-9Lu">
+                                        <rect key="frame" x="40" y="221.5" width="295" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -100,7 +120,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvU-xB-WbY">
                                         <rect key="frame" x="291" y="16.5" width="64" height="30"/>
                                         <state key="normal" title="Conectar">
-                                            <color key="titleColor" name="Green"/>
+                                            <color key="titleColor" name="Cyan"/>
                                         </state>
                                         <connections>
                                             <segue destination="Tlw-4l-72i" kind="show" id="gYb-vz-hgJ"/>
@@ -109,72 +129,58 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-8U-a7H">
                                         <rect key="frame" x="267" y="16.5" width="88" height="30"/>
                                         <state key="normal" title="Desconectar">
-                                            <color key="titleColor" name="Green"/>
+                                            <color key="titleColor" name="Cyan"/>
                                         </state>
                                         <connections>
                                             <action selector="disconnectBluetoothHandle:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HB6-Fp-Agh"/>
                                         </connections>
                                     </button>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vAx-Ys-IbH">
-                                        <rect key="frame" x="172.5" y="358" width="30" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgU-71-gEj">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" name="Purple"/>
-                                                <state key="normal" title="+">
-                                                    <color key="titleColor" name="Yellow"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="plusButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ftx-zr-lvh"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh6-g3-B92">
-                                                <rect key="frame" x="0.0" y="30" width="30" height="30"/>
-                                                <color key="backgroundColor" red="0.90196078430000004" green="0.91764705879999997" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="-">
-                                                    <color key="titleColor" name="Purple"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="minusButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="1yb-wX-bOv"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="SS0-aN-3qR" firstAttribute="top" secondItem="1EP-vj-jP7" secondAttribute="bottom" constant="20" id="1Et-UC-xkI"/>
-                                    <constraint firstAttribute="bottom" secondItem="vAx-Ys-IbH" secondAttribute="bottom" constant="120" id="1S1-4W-hFk"/>
-                                    <constraint firstItem="eOe-8U-a7H" firstAttribute="centerY" secondItem="1EP-vj-jP7" secondAttribute="centerY" id="7FG-yZ-J7h"/>
-                                    <constraint firstItem="Dl3-ih-9Lu" firstAttribute="centerX" secondItem="aSK-x4-Bc6" secondAttribute="centerX" id="9SW-44-BVx"/>
-                                    <constraint firstItem="SS0-aN-3qR" firstAttribute="centerX" secondItem="aSK-x4-Bc6" secondAttribute="centerX" id="TBP-0f-2fx"/>
-                                    <constraint firstAttribute="trailing" secondItem="SS0-aN-3qR" secondAttribute="trailing" constant="20" id="Wnr-1S-VQm"/>
-                                    <constraint firstItem="vAx-Ys-IbH" firstAttribute="centerX" secondItem="aSK-x4-Bc6" secondAttribute="centerX" id="Zrz-Bn-soa"/>
-                                    <constraint firstItem="dvU-xB-WbY" firstAttribute="centerY" secondItem="1EP-vj-jP7" secondAttribute="centerY" id="hmx-T7-bgI"/>
-                                    <constraint firstAttribute="trailing" secondItem="eOe-8U-a7H" secondAttribute="trailing" constant="20" id="jF6-Tk-qsO"/>
-                                    <constraint firstItem="R4O-c1-aDD" firstAttribute="centerX" secondItem="aSK-x4-Bc6" secondAttribute="centerX" id="lSq-Ac-dVC"/>
-                                    <constraint firstItem="1EP-vj-jP7" firstAttribute="top" secondItem="aSK-x4-Bc6" secondAttribute="top" constant="10" id="rZY-FK-nAw"/>
-                                    <constraint firstItem="Dl3-ih-9Lu" firstAttribute="top" secondItem="R4O-c1-aDD" secondAttribute="bottom" constant="8" id="szN-kf-5Sm"/>
-                                    <constraint firstItem="SS0-aN-3qR" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="20" id="tGa-KD-Go1"/>
-                                    <constraint firstItem="1EP-vj-jP7" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="20" id="tUB-ur-Jm1"/>
-                                    <constraint firstItem="R4O-c1-aDD" firstAttribute="top" secondItem="SS0-aN-3qR" secondAttribute="bottom" constant="45" id="uFz-mg-bLh"/>
-                                    <constraint firstAttribute="trailing" secondItem="dvU-xB-WbY" secondAttribute="trailing" constant="20" id="xex-kF-lVG"/>
+                                    <constraint firstAttribute="trailing" secondItem="R4O-c1-aDD" secondAttribute="trailing" constant="40" id="1Ne-lV-guF"/>
+                                    <constraint firstItem="Dl3-ih-9Lu" firstAttribute="top" secondItem="R4O-c1-aDD" secondAttribute="bottom" constant="10" id="2a4-FC-2Dn"/>
+                                    <constraint firstItem="eOe-8U-a7H" firstAttribute="centerY" secondItem="1EP-vj-jP7" secondAttribute="centerY" id="4mU-rA-OuC"/>
+                                    <constraint firstItem="R4O-c1-aDD" firstAttribute="top" secondItem="SS0-aN-3qR" secondAttribute="bottom" constant="20" id="67G-aF-h8f"/>
+                                    <constraint firstAttribute="trailing" secondItem="dvU-xB-WbY" secondAttribute="trailing" constant="20" id="9WJ-KU-tT5"/>
+                                    <constraint firstItem="dvU-xB-WbY" firstAttribute="centerY" secondItem="1EP-vj-jP7" secondAttribute="centerY" id="9bh-o9-wdz"/>
+                                    <constraint firstItem="R4O-c1-aDD" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="40" id="Dog-we-r9F"/>
+                                    <constraint firstItem="1EP-vj-jP7" firstAttribute="top" secondItem="aSK-x4-Bc6" secondAttribute="top" constant="10" id="IIf-gq-kJf"/>
+                                    <constraint firstItem="SS0-aN-3qR" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="20" id="Rkr-Yn-o0a"/>
+                                    <constraint firstAttribute="trailing" secondItem="SS0-aN-3qR" secondAttribute="trailing" constant="20" id="TUg-fn-cOe"/>
+                                    <constraint firstAttribute="trailing" secondItem="eOe-8U-a7H" secondAttribute="trailing" constant="20" id="fZ4-vn-wdy"/>
+                                    <constraint firstItem="Dl3-ih-9Lu" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="40" id="hOl-SF-8TU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dl3-ih-9Lu" secondAttribute="trailing" constant="40" id="qSX-Ay-9h5"/>
+                                    <constraint firstItem="1EP-vj-jP7" firstAttribute="leading" secondItem="aSK-x4-Bc6" secondAttribute="leading" constant="20" id="rTq-sO-43X"/>
+                                    <constraint firstItem="SS0-aN-3qR" firstAttribute="top" secondItem="1EP-vj-jP7" secondAttribute="bottom" constant="20" id="y7S-By-IvP"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RUN-kF-NXv">
+                                <rect key="frame" x="20" y="0.0" width="335" height="32"/>
+                                <segments>
+                                    <segment title="Bluetooth"/>
+                                    <segment title="Wi-Fi" enabled="NO"/>
+                                </segments>
+                                <color key="tintColor" name="Yellow"/>
+                                <color key="selectedSegmentTintColor" name="Cyan"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="arG-hy-lfP"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="top" secondItem="RUN-kF-NXv" secondAttribute="bottom" constant="5" id="Dnb-UZ-p0D"/>
-                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="FMe-Dy-BrT"/>
-                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="LSc-i3-u26"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="Yl9-qZ-0Aa" secondAttribute="bottom" id="UM2-Xr-iNg"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="aSK-x4-Bc6" secondAttribute="trailing" id="X7Q-Rd-ydm"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Yl9-qZ-0Aa" secondAttribute="trailing" id="aTs-NU-NGt"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="RUN-kF-NXv" secondAttribute="trailing" id="iyM-TL-XEf"/>
-                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="k6G-4j-OXP"/>
-                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="top" secondItem="RUN-kF-NXv" secondAttribute="bottom" constant="5" id="kss-9M-y1z"/>
-                            <constraint firstItem="RUN-kF-NXv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="pPt-KK-4QN"/>
-                            <constraint firstItem="RUN-kF-NXv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="rzg-a6-V24"/>
+                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="5KH-gm-MMI"/>
+                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="6dL-wn-h6y"/>
+                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="top" secondItem="RUN-kF-NXv" secondAttribute="bottom" constant="5" id="Lca-Ji-nhW"/>
+                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="QqP-Pv-md9"/>
+                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="ROp-TQ-q1L"/>
+                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="top" secondItem="RUN-kF-NXv" secondAttribute="bottom" constant="5" id="TjH-Tm-sp7"/>
+                            <constraint firstItem="RUN-kF-NXv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="epq-Ge-8ox"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="RUN-kF-NXv" secondAttribute="trailing" constant="20" id="i8t-Oc-ubv"/>
+                            <constraint firstItem="aSK-x4-Bc6" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="nvP-EN-cN1"/>
+                            <constraint firstItem="RUN-kF-NXv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="y0e-iH-Uil"/>
+                            <constraint firstItem="Yl9-qZ-0Aa" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="zl9-t6-qGh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -186,6 +192,9 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                         <outlet property="connectBluetoothButton" destination="dvU-xB-WbY" id="azu-Ze-B8M"/>
                         <outlet property="disconnectBluetoothButton" destination="eOe-8U-a7H" id="tjX-Ac-T76"/>
                         <outlet property="segmentedControl" destination="RUN-kF-NXv" id="5cx-He-34x"/>
+                        <outlet property="wiFiConnectionLabel" destination="g2m-35-zgi" id="ixs-9o-RRx"/>
+                        <outlet property="wiFiSSIDLabel" destination="CQL-U5-eGo" id="B8v-G2-hWs"/>
+                        <outlet property="wiFiTestConnectionButton" destination="HIM-KT-CfZ" id="Hwu-Fu-cgE"/>
                         <outlet property="wifiView" destination="Yl9-qZ-0Aa" id="dXu-cJ-9XF"/>
                     </connections>
                 </viewController>
@@ -193,64 +202,65 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="-1141.0794602698652"/>
         </scene>
-        <!--Configuração-->
-        <scene sceneID="pcc-n2-Wmr">
+        <!--Selecionar Rede-->
+        <scene sceneID="Xbh-d0-fjc">
             <objects>
-                <viewController id="CqG-M9-DHy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Bg-M9-wwa">
+                <tableViewController id="BOr-je-pgk" customClass="WifiConnectionViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N7Z-Dt-Kuu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurar Wi-FI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxA-oi-Iwx">
-                                <rect key="frame" x="20" y="20" width="221.5" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID da Rede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-GT-Zda">
-                                <rect key="frame" x="20" y="87" width="335" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha da Rede" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO6-iE-hZf">
-                                <rect key="frame" x="20" y="141" width="335" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-Vl-w57">
-                                <rect key="frame" x="147.5" y="240" width="80" height="30"/>
-                                <color key="backgroundColor" name="Primary"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="XZF-du-LQD"/>
-                                    <constraint firstAttribute="width" constant="80" id="hN0-Oc-H2y"/>
-                                </constraints>
-                                <state key="normal" title="Conectar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="pPI-GT-Zda" firstAttribute="top" secondItem="RxA-oi-Iwx" secondAttribute="bottom" constant="30" id="0Ns-rI-g1F"/>
-                            <constraint firstItem="RxA-oi-Iwx" firstAttribute="top" secondItem="wAA-Og-hUx" secondAttribute="top" constant="20" id="5dH-1M-h24"/>
-                            <constraint firstItem="MO6-iE-hZf" firstAttribute="top" secondItem="pPI-GT-Zda" secondAttribute="bottom" constant="20" id="7fg-MP-Pw3"/>
-                            <constraint firstItem="pPI-GT-Zda" firstAttribute="height" secondItem="MO6-iE-hZf" secondAttribute="height" id="AAb-PW-yY7"/>
-                            <constraint firstItem="VXW-Vl-w57" firstAttribute="top" secondItem="MO6-iE-hZf" secondAttribute="bottom" constant="65" id="Fkf-PV-jOT"/>
-                            <constraint firstItem="VXW-Vl-w57" firstAttribute="centerX" secondItem="3Bg-M9-wwa" secondAttribute="centerX" id="KOs-Ua-WTu"/>
-                            <constraint firstItem="wAA-Og-hUx" firstAttribute="trailing" secondItem="pPI-GT-Zda" secondAttribute="trailing" constant="20" id="ODI-Vx-V67"/>
-                            <constraint firstItem="pPI-GT-Zda" firstAttribute="width" secondItem="MO6-iE-hZf" secondAttribute="width" id="QUo-2O-58q"/>
-                            <constraint firstItem="RxA-oi-Iwx" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="XmO-Rx-5eS"/>
-                            <constraint firstItem="wAA-Og-hUx" firstAttribute="trailing" secondItem="MO6-iE-hZf" secondAttribute="trailing" constant="20" id="guK-oo-8gg"/>
-                            <constraint firstItem="MO6-iE-hZf" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="hWP-X4-C7Q"/>
-                            <constraint firstItem="pPI-GT-Zda" firstAttribute="leading" secondItem="wAA-Og-hUx" secondAttribute="leading" constant="20" id="m3G-cE-gzg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wAA-Og-hUx"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Configuração" id="ahU-uo-Vmv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tWL-HP-bX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WiFiTableViewCell" id="4YG-Jh-8Dr" customClass="WiFiTableViewCell" customModule="Pinga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4YG-Jh-8Dr" id="Oox-xZ-cME">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smN-l9-0e5">
+                                            <rect key="frame" x="16" y="11.5" width="328" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="smN-l9-0e5" firstAttribute="leading" secondItem="Oox-xZ-cME" secondAttribute="leadingMargin" id="GyM-WE-tFT"/>
+                                        <constraint firstItem="smN-l9-0e5" firstAttribute="centerY" secondItem="Oox-xZ-cME" secondAttribute="centerY" id="rdv-ob-WXs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="smN-l9-0e5" secondAttribute="trailing" constant="15" id="xH2-dD-4eg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ssid" destination="smN-l9-0e5" id="3ix-o7-0EW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BOr-je-pgk" id="mbH-ar-oqa"/>
+                            <outlet property="delegate" destination="BOr-je-pgk" id="soW-ss-gL7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Selecionar Rede" id="Z5n-3w-H3e"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="4c2-By-ajH">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Buscando Redes...">
+                                <attributes>
+                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="networkList" destination="N7Z-Dt-Kuu" id="1Eb-JQ-dot"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pV-2l-y8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2782" y="-689"/>
+            <point key="canvasLocation" x="2782" y="-809"/>
         </scene>
         <!--Relatórios Disponíveis-->
         <scene sceneID="yj8-iY-AHZ">
@@ -275,8 +285,8 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZNb-ro-D4K">
-                                            <rect key="frame" x="346.5" y="14" width="12.5" height="17"/>
-                                            <color key="tintColor" name="Green"/>
+                                            <rect key="frame" x="346.5" y="14" width="12.5" height="16.5"/>
+                                            <color key="tintColor" name="Cyan"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -290,7 +300,6 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                 <connections>
                                     <outlet property="icon" destination="ZNb-ro-D4K" id="534-I5-ZY1"/>
                                     <outlet property="title" destination="dSo-5X-P42" id="Zhc-Qz-Voj"/>
-                                    <segue destination="Cjz-00-tnn" kind="show" id="EWh-xg-Nxi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -309,7 +318,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
         <scene sceneID="dbe-0M-kGy">
             <objects>
                 <viewController id="6d5-gQ-fIR" customClass="InfoTableViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x7p-go-Cdn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x7p-go-Cdn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -328,8 +337,8 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HVt-at-h5r">
-                                            <rect key="frame" x="5" y="7" width="30" height="29.5"/>
-                                            <color key="tintColor" name="Green"/>
+                                            <rect key="frame" x="5" y="7" width="30" height="29"/>
+                                            <color key="tintColor" name="Cyan"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="EJG-vK-AGb"/>
                                                 <constraint firstAttribute="height" constant="30" id="keh-2W-ftg"/>
@@ -370,14 +379,14 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
+                <tabBarController storyboardIdentifier="main" id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="Primary"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Lime"/>
+                        <color key="tintColor" name="Lime"/>
+                        <color key="barTintColor" name="Blue"/>
+                        <color key="selectedImageTintColor" name="Lime"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" cocoaTouchSystemColor="lightTextColor"/>
@@ -403,8 +412,11 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="nfj-wy-I67">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="Primary"/>
+                        <color key="tintColor" name="Lime"/>
+                        <color key="barTintColor" name="Blue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -474,7 +486,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                             <fragment content="Buscando Dispositivos...">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <font key="NSFont" metaFont="controlContent" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -494,8 +506,11 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="X9r-Mn-9wF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="Primary"/>
+                        <color key="tintColor" name="Lime"/>
+                        <color key="barTintColor" name="Blue"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -515,8 +530,8 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="18p-ZV-7Uk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" name="Primary"/>
+                        <color key="tintColor" name="Lime"/>
+                        <color key="barTintColor" name="Blue"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -533,9 +548,9 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
         <!--Stats View Controller-->
         <scene sceneID="62x-ax-H9j">
             <objects>
-                <viewController id="Cjz-00-tnn" customClass="StatsViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsView" id="Cjz-00-tnn" customClass="StatsViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ROj-XU-oP9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Análise" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7it-66-gEJ">
@@ -544,15 +559,15 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-fs-Wgf" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="113" width="335" height="441"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-fs-Wgf" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="113" width="335" height="534"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" name="Primary"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fct-bq-sOj">
                                 <rect key="frame" x="248" y="26.5" width="107" height="30"/>
                                 <state key="normal" title="Salvar Relatório">
-                                    <color key="titleColor" name="Green"/>
+                                    <color key="titleColor" name="Cyan"/>
                                 </state>
                                 <connections>
                                     <action selector="exportChartData:" destination="Cjz-00-tnn" eventType="touchUpInside" id="HLr-x4-1cx"/>
@@ -575,31 +590,66 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     </view>
                     <navigationItem key="navigationItem" id="iGx-E7-A1T"/>
                     <connections>
-                        <outlet property="lineChartView" destination="KRH-fs-Wgf" id="9Ui-U1-Ktt"/>
+                        <outlet property="barChartView" destination="KRH-fs-Wgf" id="9Ui-U1-Ktt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejg-jz-Yhf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="358"/>
+            <point key="canvasLocation" x="2638" y="-18"/>
+        </scene>
+        <!--Disponibilidade - Semana-->
+        <scene sceneID="5lG-FY-L7y">
+            <objects>
+                <viewController storyboardIdentifier="AvailabilityWeekViewController" title="Disponibilidade - Semana" id="mWO-Kv-sxm" customClass="AvailabilityWeekViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n1W-GH-4eL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txk-OD-81L" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="5" y="5" width="365" height="657"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" name="Primary"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VqR-wg-MmG" firstAttribute="bottom" secondItem="Txk-OD-81L" secondAttribute="bottom" constant="5" id="BVj-SJ-0Qj"/>
+                            <constraint firstItem="Txk-OD-81L" firstAttribute="leading" secondItem="VqR-wg-MmG" secondAttribute="leading" constant="5" id="LEh-jb-wsg"/>
+                            <constraint firstItem="VqR-wg-MmG" firstAttribute="trailing" secondItem="Txk-OD-81L" secondAttribute="trailing" constant="5" id="LQG-T1-gHX"/>
+                            <constraint firstItem="Txk-OD-81L" firstAttribute="top" secondItem="VqR-wg-MmG" secondAttribute="top" constant="5" id="WW6-gG-r29"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VqR-wg-MmG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jul-wH-Xo6"/>
+                    <connections>
+                        <outlet property="barChartView" destination="Txk-OD-81L" id="OUF-Ge-ZJA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua0-Kx-ztr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="689"/>
         </scene>
     </scenes>
     <resources>
         <image name="chart.pie.fill" catalog="system" width="64" height="62"/>
-        <image name="chevron.right" catalog="system" width="46" height="64"/>
-        <image name="ellipsis.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="info.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="wifi" catalog="system" width="64" height="46"/>
-        <namedColor name="Green">
-            <color red="0.0" green="0.44705882352941173" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Blue">
+            <color red="0.0" green="0.27500000596046448" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Cyan">
+            <color red="0.0" green="0.70200002193450928" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Lime">
+            <color red="0.48199999332427979" green="0.78799998760223389" blue="0.054999999701976776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Primary">
-            <color red="0.63529411764705879" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Purple">
-            <color red="0.072122482491888212" green="0.19245613075527723" blue="0.43270320595854928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.63499999046325684" green="0.0" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Yellow">
-            <color red="0.90196078431372551" green="0.91764705882352937" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.75300002098083496" blue="0.0080000003799796104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

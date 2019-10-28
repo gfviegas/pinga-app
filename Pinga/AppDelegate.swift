@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         BluetoothManager.shared.connected = false
-        
+        FirebaseManager.setup()
         return true
     }
 

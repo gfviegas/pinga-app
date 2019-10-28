@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230736E6235E2AB000386532 /* WiFiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230736E5235E2AB000386532 /* WiFiTableViewCell.swift */; };
+		230BB00D234B58D9005EB911 /* StatsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB00C234B58D9005EB911 /* StatsDataService.swift */; };
+		230BB00F234B6E9A005EB911 /* StatsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB00E234B6E9A005EB911 /* StatsChart.swift */; };
+		230BB011234B9B3C005EB911 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB010234B9B3C005EB911 /* Date.swift */; };
+		2311E77B236637D300534E28 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311E77A236637D300534E28 /* FirebaseManager.swift */; };
 		234E75CE233AE2C100C1F823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75CD233AE2C100C1F823 /* AppDelegate.swift */; };
 		234E75D0233AE2C100C1F823 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75CF233AE2C100C1F823 /* SceneDelegate.swift */; };
 		234E75D7233AE2C100C1F823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234E75D5233AE2C100C1F823 /* Main.storyboard */; };
@@ -17,7 +22,14 @@
 		234E7602233BFFF800C1F823 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 234E7601233BFFF800C1F823 /* Podfile */; };
 		234E7606233C0F3000C1F823 /* TimeAvailableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E7605233C0F3000C1F823 /* TimeAvailableEntry.swift */; };
 		234E760A233C3D3F00C1F823 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E7609233C3D3F00C1F823 /* InfoTableViewController.swift */; };
+		2380382323664BEC00EFF795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2380382223664BEC00EFF795 /* GoogleService-Info.plist */; };
+		2380382423664BEC00EFF795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2380382223664BEC00EFF795 /* GoogleService-Info.plist */; };
+		2380382523664BEC00EFF795 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2380382223664BEC00EFF795 /* GoogleService-Info.plist */; };
+		23803828236659DF00EFF795 /* AvailabilityWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23803827236659DF00EFF795 /* AvailabilityWeekViewController.swift */; };
 		239AC51E234265EA00B870DD /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239AC51D234265EA00B870DD /* BluetoothManager.swift */; };
+		239AC5222345224D00B870DD /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239AC5212345224D00B870DD /* Notification.swift */; };
+		239AC524234544EE00B870DD /* WiFiConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239AC523234544EE00B870DD /* WiFiConnectionViewController.swift */; };
+		239AC5262346456700B870DD /* WiFiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239AC5252346456700B870DD /* WiFiManager.swift */; };
 		23A3F96C233C48A100AC4F25 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96B233C48A100AC4F25 /* InfoTableViewCell.swift */; };
 		23A3F96E233D2EF000AC4F25 /* BLEDevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96D233D2EF000AC4F25 /* BLEDevicesTableViewController.swift */; };
 		23A3F970233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */; };
@@ -65,6 +77,11 @@
 
 /* Begin PBXFileReference section */
 		1305657482A9AAA959D0A445 /* Pods-Pinga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinga.debug.xcconfig"; path = "Target Support Files/Pods-Pinga/Pods-Pinga.debug.xcconfig"; sourceTree = "<group>"; };
+		230736E5235E2AB000386532 /* WiFiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiTableViewCell.swift; sourceTree = "<group>"; };
+		230BB00C234B58D9005EB911 /* StatsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDataService.swift; sourceTree = "<group>"; };
+		230BB00E234B6E9A005EB911 /* StatsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChart.swift; sourceTree = "<group>"; };
+		230BB010234B9B3C005EB911 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2311E77A236637D300534E28 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		234E75CA233AE2C100C1F823 /* Pinga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234E75CD233AE2C100C1F823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234E75CF233AE2C100C1F823 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +98,12 @@
 		234E7601233BFFF800C1F823 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		234E7605233C0F3000C1F823 /* TimeAvailableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAvailableEntry.swift; sourceTree = "<group>"; };
 		234E7609233C3D3F00C1F823 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		2380382223664BEC00EFF795 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		23803827236659DF00EFF795 /* AvailabilityWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityWeekViewController.swift; sourceTree = "<group>"; };
 		239AC51D234265EA00B870DD /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		239AC5212345224D00B870DD /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		239AC523234544EE00B870DD /* WiFiConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiConnectionViewController.swift; sourceTree = "<group>"; };
+		239AC5252346456700B870DD /* WiFiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiManager.swift; sourceTree = "<group>"; };
 		23A3F96B233C48A100AC4F25 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		23A3F96D233D2EF000AC4F25 /* BLEDevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDevicesTableViewController.swift; sourceTree = "<group>"; };
 		23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDevicesTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230BB00B234B58A9005EB911 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				230BB00C234B58D9005EB911 /* StatsDataService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		234E75C1233AE2C100C1F823 = {
 			isa = PBXGroup;
 			children = (
@@ -157,15 +187,19 @@
 		234E75CC233AE2C100C1F823 /* Pinga */ = {
 			isa = PBXGroup;
 			children = (
-				23A3F980233E864300AC4F25 /* Connection */,
-				23A3F97F233E862C00AC4F25 /* Stats */,
-				23A3F97E233E861200AC4F25 /* Info */,
-				234E75CD233AE2C100C1F823 /* AppDelegate.swift */,
-				234E75CF233AE2C100C1F823 /* SceneDelegate.swift */,
-				234E75D5233AE2C100C1F823 /* Main.storyboard */,
-				234E75D8233AE2C100C1F823 /* Assets.xcassets */,
-				234E75DA233AE2C100C1F823 /* LaunchScreen.storyboard */,
+				2380382223664BEC00EFF795 /* GoogleService-Info.plist */,
 				234E75DD233AE2C100C1F823 /* Info.plist */,
+				234E75CD233AE2C100C1F823 /* AppDelegate.swift */,
+				230BB010234B9B3C005EB911 /* Date.swift */,
+				2311E77A236637D300534E28 /* FirebaseManager.swift */,
+				239AC5212345224D00B870DD /* Notification.swift */,
+				234E75CF233AE2C100C1F823 /* SceneDelegate.swift */,
+				234E75D8233AE2C100C1F823 /* Assets.xcassets */,
+				23A3F980233E864300AC4F25 /* Connection */,
+				23A3F97E233E861200AC4F25 /* Info */,
+				234E75DA233AE2C100C1F823 /* LaunchScreen.storyboard */,
+				234E75D5233AE2C100C1F823 /* Main.storyboard */,
+				23A3F97F233E862C00AC4F25 /* Stats */,
 			);
 			path = Pinga;
 			sourceTree = "<group>";
@@ -188,6 +222,14 @@
 			path = PingaUITests;
 			sourceTree = "<group>";
 		};
+		23803826236659B600EFF795 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				23803827236659DF00EFF795 /* AvailabilityWeekViewController.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		23A3F97E233E861200AC4F25 /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,10 +243,13 @@
 		23A3F97F233E862C00AC4F25 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
+				23803826236659B600EFF795 /* Charts */,
+				230BB00B234B58A9005EB911 /* Data */,
 				234E7605233C0F3000C1F823 /* TimeAvailableEntry.swift */,
 				23A3F983233E86BC00AC4F25 /* StatsViewController.swift */,
 				23A3F989233EA29A00AC4F25 /* StatsTableViewController.swift */,
 				23A3F98B233EA2CF00AC4F25 /* StatsTableViewCell.swift */,
+				230BB00E234B6E9A005EB911 /* StatsChart.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -216,6 +261,9 @@
 				23A3F96F233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift */,
 				23A3F981233E868400AC4F25 /* ConnectionViewController.swift */,
 				239AC51D234265EA00B870DD /* BluetoothManager.swift */,
+				239AC523234544EE00B870DD /* WiFiConnectionViewController.swift */,
+				239AC5252346456700B870DD /* WiFiManager.swift */,
+				230736E5235E2AB000386532 /* WiFiTableViewCell.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -358,6 +406,7 @@
 			files = (
 				234E75DC233AE2C100C1F823 /* LaunchScreen.storyboard in Resources */,
 				234E75D9233AE2C100C1F823 /* Assets.xcassets in Resources */,
+				2380382323664BEC00EFF795 /* GoogleService-Info.plist in Resources */,
 				234E7602233BFFF800C1F823 /* Podfile in Resources */,
 				234E75D7233AE2C100C1F823 /* Main.storyboard in Resources */,
 			);
@@ -367,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2380382423664BEC00EFF795 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2380382523664BEC00EFF795 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,18 +538,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239AC524234544EE00B870DD /* WiFiConnectionViewController.swift in Sources */,
 				234E760A233C3D3F00C1F823 /* InfoTableViewController.swift in Sources */,
 				23A3F98C233EA2CF00AC4F25 /* StatsTableViewCell.swift in Sources */,
 				239AC51E234265EA00B870DD /* BluetoothManager.swift in Sources */,
+				230BB00F234B6E9A005EB911 /* StatsChart.swift in Sources */,
 				23A3F984233E86BC00AC4F25 /* StatsViewController.swift in Sources */,
+				230BB00D234B58D9005EB911 /* StatsDataService.swift in Sources */,
 				23A3F982233E868400AC4F25 /* ConnectionViewController.swift in Sources */,
+				230736E6235E2AB000386532 /* WiFiTableViewCell.swift in Sources */,
+				2311E77B236637D300534E28 /* FirebaseManager.swift in Sources */,
+				239AC5262346456700B870DD /* WiFiManager.swift in Sources */,
 				23A3F96C233C48A100AC4F25 /* InfoTableViewCell.swift in Sources */,
 				23A3F988233E88CD00AC4F25 /* InfoViewController.swift in Sources */,
 				234E75CE233AE2C100C1F823 /* AppDelegate.swift in Sources */,
 				234E75D0233AE2C100C1F823 /* SceneDelegate.swift in Sources */,
 				23A3F96E233D2EF000AC4F25 /* BLEDevicesTableViewController.swift in Sources */,
 				234E7606233C0F3000C1F823 /* TimeAvailableEntry.swift in Sources */,
+				239AC5222345224D00B870DD /* Notification.swift in Sources */,
+				230BB011234B9B3C005EB911 /* Date.swift in Sources */,
 				23A3F98A233EA29A00AC4F25 /* StatsTableViewController.swift in Sources */,
+				23803828236659DF00EFF795 /* AvailabilityWeekViewController.swift in Sources */,
 				23A3F970233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
