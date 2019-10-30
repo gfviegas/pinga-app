@@ -9,52 +9,76 @@
 import Foundation
 import UIKit
 import Charts
+import SwiftyJSON
 
 class StatsViewController: UIViewController {
-    @IBOutlet weak var lineChartView: LineChartView!
-
+    @IBOutlet weak var barChartView: BarChartView!
+    
+    var statsChart: StatsChart?
     let formatter = DateFormatter()
-    let chartData: [TimeAvailableEntry] = [
-        TimeAvailableEntry(day: Date(), available: 22.3),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 1)), available: 23.3),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 2)), available: 23.5),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 3)), available: 20.5),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 4)), available: 18.9),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 5)), available: 22.1),
-        TimeAvailableEntry(day: Date(timeIntervalSinceNow: -(86400 * 6)), available: 23.9)
-    ]
-
+    
+    required init?(coder c: NSCoder) {
+        super.init(coder: c)
+        // fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        print(statsChart!.jsonData![0])
+        
         formatter.locale = Locale(identifier: "pt_BR")
         formatter.dateFormat = "EE"
         
-        self.lineChartView.xAxis.labelPosition = .bottom
-        self.lineChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        barChartView.xAxis.labelPosition = .bottom
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
         updateChartData()
     }
 
     @IBAction func exportChartData(_ sender: Any) {
-        self.lineChartView.save(to: "./", format: ChartViewBase.ImageFormat.png, compressionQuality: 0.8)
+        barChartView.save(to: "./", format: ChartViewBase.ImageFormat.png, compressionQuality: 0.8)
     }
     
     func updateChartData() {
-        let count = chartData.count
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let data = chartData[i]
-            return ChartDataEntry(x: Double(i), y: Double(data.available))
+        let data = statsChart!.jsonData![0]["data"].arrayValue
+        
+        let count = data.count
+        
+        let values = (0..<count).map { (i) -> BarChartDataEntry in
+            let item = data[i]
+            print(item["availability"].doubleValue)
+            return BarChartDataEntry(x: Double(i), y: item["availability"].doubleValue)
         }
         
-        self.lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(i, _) in
-            return self.formatter.string(from: self.chartData[Int(i)].day)
+        barChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(i, _) in
+            let dateValue: Date = Date.dateFromISOString(string: data[Int(i)]["date"].stringValue)!
+            return self.formatter.string(from: dateValue)
         })
                
-        let set1 = LineChartDataSet(entries: values, label: "Tempo de disponibilidade")
-        //        set1.colors = ChartColorTemplates.liberty()
-        let data = LineChartData(dataSet: set1)
-        
-        self.lineChartView.data = data
+        let set1 = BarChartDataSet(entries: values, label: statsChart?.chartTitle)
+        set1.colors = ChartColorTemplates.joyful()
+
+        barChartView.data = BarChartData(dataSet: set1)
     }
+    
+//    func updateChartData() {
+//        let count = chartData.count
+//        let values = (0..<count).map { (i) -> ChartDataEntry in
+//            let data = chartData[i]
+//            return ChartDataEntry(x: Double(i), y: Double(data.available))
+//        }
+//
+//        lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(i, _) in
+//            return formatter.string(from: self.chartData[Int(i)].day)
+//        })
+//
+//        let set1 = LineChartDataSet(entries: values, label: "Tempo de disponibilidade")
+//        //        set1.colors = ChartColorTemplates.liberty()
+//        let data = LineChartData(dataSet: set1)
+//
+//        lineChartView.data = data
+//    }
+    
+
 }

@@ -1,0 +1,6 @@
+framework module Pods_PingaTests {
+  umbrella header "Pods-PingaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

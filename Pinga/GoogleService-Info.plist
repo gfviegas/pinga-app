@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>345595708195-mo0n7sqel0btj644e0lhlk9l4ijmk3n0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.345595708195-mo0n7sqel0btj644e0lhlk9l4ijmk3n0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBAmWJz3MpqwXcm2k-VzHqQma0XpjjahJA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>345595708195</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gfviegas.Pinga</string>
+	<key>PROJECT_ID</key>
+	<string>pinga-256611</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pinga-256611.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:345595708195:ios:a1023b5f5f91bf1f378296</string>
+	<key>DATABASE_URL</key>
+	<string>https://pinga-256611.firebaseio.com</string>
+</dict>
+</plist>
