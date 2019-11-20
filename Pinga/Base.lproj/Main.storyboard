@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -248,7 +248,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                         <attributedString key="attributedTitle">
                             <fragment content="Buscando Redes...">
                                 <attributes>
-                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <font key="NSFont" metaFont="label" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -263,56 +263,56 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
             <point key="canvasLocation" x="2782" y="-809"/>
         </scene>
         <!--Relatórios Disponíveis-->
-        <scene sceneID="yj8-iY-AHZ">
+        <scene sceneID="q29-60-7dU">
             <objects>
-                <tableViewController id="WGP-6c-qYl" customClass="StatsTableViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DmK-6L-c8Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                <tableViewController storyboardIdentifier="StatsTableViewController" title="Relatórios Disponíveis" id="hHD-j7-7Dd" customClass="StatsTableViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZGZ-cc-YVG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatsTableViewCell" id="Hwm-eT-hOM" customClass="StatsTableViewCell" customModule="Pinga" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatsTableViewCell" id="KcB-kQ-7fW" customClass="StatsTableViewCell" customModule="Pinga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hwm-eT-hOM" id="VWX-br-1mN">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KcB-kQ-7fW" id="rZP-s9-05M">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disponibilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSo-5X-P42">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disponibilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJj-K8-QPH">
                                             <rect key="frame" x="21" y="11.5" width="118" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZNb-ro-D4K">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hkL-ys-lj0">
                                             <rect key="frame" x="346.5" y="14" width="12.5" height="16.5"/>
                                             <color key="tintColor" name="Cyan"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ZNb-ro-D4K" firstAttribute="trailing" secondItem="VWX-br-1mN" secondAttribute="trailingMargin" id="2TU-Ph-fbO"/>
-                                        <constraint firstItem="dSo-5X-P42" firstAttribute="leading" secondItem="VWX-br-1mN" secondAttribute="leadingMargin" constant="5" id="GPu-X8-5w9"/>
-                                        <constraint firstItem="dSo-5X-P42" firstAttribute="centerY" secondItem="VWX-br-1mN" secondAttribute="centerY" id="IGB-B4-ddC"/>
-                                        <constraint firstItem="ZNb-ro-D4K" firstAttribute="centerY" secondItem="VWX-br-1mN" secondAttribute="centerY" id="n8l-Mt-m4d"/>
+                                        <constraint firstItem="hkL-ys-lj0" firstAttribute="centerY" secondItem="rZP-s9-05M" secondAttribute="centerY" id="clb-bL-7SM"/>
+                                        <constraint firstItem="kJj-K8-QPH" firstAttribute="leading" secondItem="rZP-s9-05M" secondAttribute="leadingMargin" constant="5" id="lq9-5K-RfW"/>
+                                        <constraint firstItem="kJj-K8-QPH" firstAttribute="centerY" secondItem="rZP-s9-05M" secondAttribute="centerY" id="qdq-ic-w27"/>
+                                        <constraint firstItem="hkL-ys-lj0" firstAttribute="trailing" secondItem="rZP-s9-05M" secondAttribute="trailingMargin" id="wvm-4h-M9T"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="StatsTableViewCell"/>
                                 <connections>
-                                    <outlet property="icon" destination="ZNb-ro-D4K" id="534-I5-ZY1"/>
-                                    <outlet property="title" destination="dSo-5X-P42" id="Zhc-Qz-Voj"/>
+                                    <outlet property="icon" destination="hkL-ys-lj0" id="uPa-ZB-uJu"/>
+                                    <outlet property="title" destination="kJj-K8-QPH" id="RUQ-rJ-Iod"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="WGP-6c-qYl" id="VZ2-Ls-caJ"/>
-                            <outlet property="delegate" destination="WGP-6c-qYl" id="DhL-ob-hE4"/>
+                            <outlet property="dataSource" destination="hHD-j7-7Dd" id="4Ft-yk-QlX"/>
+                            <outlet property="delegate" destination="hHD-j7-7Dd" id="xU4-fm-D7U"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Relatórios Disponíveis" id="Fdq-ZF-1HR"/>
+                    <navigationItem key="navigationItem" title="Relatórios Disponíveis" id="0QE-By-avq"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ps2-5r-CeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZj-XY-0mg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="359"/>
+            <point key="canvasLocation" x="3020" y="358"/>
         </scene>
         <!--Informações-->
         <scene sceneID="dbe-0M-kGy">
@@ -486,7 +486,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                             <fragment content="Buscando Dispositivos...">
                                 <attributes>
                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <font key="NSFont" metaFont="label" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -538,12 +538,64 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WGP-6c-qYl" kind="relationship" relationship="rootViewController" id="Y1D-c5-CWF"/>
+                        <segue destination="F0Y-yZ-oN1" kind="relationship" relationship="rootViewController" id="1xY-sf-JKS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNs-WN-JJ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="359"/>
+            <point key="canvasLocation" x="590" y="359"/>
+        </scene>
+        <!--Selecione a Rede-->
+        <scene sceneID="nqI-RA-cpH">
+            <objects>
+                <tableViewController id="F0Y-yZ-oN1" customClass="NetworksAvailableViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Htp-89-Qea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NetworkAvailableTableViewCell" id="zAB-2d-xbq" customClass="NetworkAvailableTableViewCell" customModule="Pinga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zAB-2d-xbq" id="WoB-Zd-hO3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disponibilidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsR-PB-Ckg">
+                                            <rect key="frame" x="21" y="11.5" width="118" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8jK-Jk-SjP">
+                                            <rect key="frame" x="346.5" y="14" width="12.5" height="16.5"/>
+                                            <color key="tintColor" name="Cyan"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8jK-Jk-SjP" firstAttribute="trailing" secondItem="WoB-Zd-hO3" secondAttribute="trailingMargin" id="22y-lY-Gcy"/>
+                                        <constraint firstItem="XsR-PB-Ckg" firstAttribute="centerY" secondItem="WoB-Zd-hO3" secondAttribute="centerY" id="T9I-Zb-MI6"/>
+                                        <constraint firstItem="8jK-Jk-SjP" firstAttribute="centerY" secondItem="WoB-Zd-hO3" secondAttribute="centerY" id="cnX-q1-QDG"/>
+                                        <constraint firstItem="XsR-PB-Ckg" firstAttribute="leading" secondItem="WoB-Zd-hO3" secondAttribute="leadingMargin" constant="5" id="uMe-Fs-I1J"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="StatsTableViewCell"/>
+                                <connections>
+                                    <outlet property="icon" destination="8jK-Jk-SjP" id="tPq-0S-1aY"/>
+                                    <outlet property="title" destination="XsR-PB-Ckg" id="5V6-rM-gSX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F0Y-yZ-oN1" id="Tek-We-wNi"/>
+                            <outlet property="delegate" destination="F0Y-yZ-oN1" id="38t-QQ-sfS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Selecione a Rede" id="h5D-qG-93c"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccq-CQ-sz8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1498" y="359"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="62x-ax-H9j">
@@ -595,7 +647,7 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejg-jz-Yhf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="-18"/>
+            <point key="canvasLocation" x="4438" y="3"/>
         </scene>
         <!--Disponibilidade - Semana-->
         <scene sceneID="5lG-FY-L7y">
@@ -604,30 +656,62 @@ O status da conexão Bluetooth com a placa é exibido abaixo.</string>
                     <view key="view" contentMode="scaleToFill" id="n1W-GH-4eL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txk-OD-81L" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="5" y="5" width="365" height="657"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" name="Primary"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="VqR-wg-MmG" firstAttribute="bottom" secondItem="Txk-OD-81L" secondAttribute="bottom" constant="5" id="BVj-SJ-0Qj"/>
-                            <constraint firstItem="Txk-OD-81L" firstAttribute="leading" secondItem="VqR-wg-MmG" secondAttribute="leading" constant="5" id="LEh-jb-wsg"/>
-                            <constraint firstItem="VqR-wg-MmG" firstAttribute="trailing" secondItem="Txk-OD-81L" secondAttribute="trailing" constant="5" id="LQG-T1-gHX"/>
-                            <constraint firstItem="Txk-OD-81L" firstAttribute="top" secondItem="VqR-wg-MmG" secondAttribute="top" constant="5" id="WW6-gG-r29"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VqR-wg-MmG"/>
                     </view>
                     <navigationItem key="navigationItem" id="jul-wH-Xo6"/>
-                    <connections>
-                        <outlet property="barChartView" destination="Txk-OD-81L" id="OUF-Ge-ZJA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ua0-Kx-ztr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="689"/>
+            <point key="canvasLocation" x="4438" y="682"/>
+        </scene>
+        <!--Disponibilidade - Semana-->
+        <scene sceneID="CRi-5A-sAY">
+            <objects>
+                <viewController storyboardIdentifier="AvailabilityDayViewController" title="Disponibilidade - Semana" id="Azg-Lj-aRg" customClass="AvailabilityDayViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iej-5w-hFY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wvZ-b2-2bH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7cr-IE-aQK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UY-Vf-yxI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5127" y="681"/>
+        </scene>
+        <!--Velocidade - Dia-->
+        <scene sceneID="kGo-1u-pNv">
+            <objects>
+                <viewController storyboardIdentifier="SpeedDayViewController" title="Velocidade - Dia" id="DcE-fz-4Kc" customClass="SpeedDayViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n0B-wR-bRs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="y7l-qy-J4u"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qgP-ZS-Gvo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4g-Vj-Srj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5825" y="681"/>
+        </scene>
+        <!--Disponibilidade - Semana-->
+        <scene sceneID="wcA-74-O6e">
+            <objects>
+                <viewController storyboardIdentifier="SpeedWeekViewController" title="Disponibilidade - Semana" id="CNe-SY-4BO" customClass="SpeedWeekViewController" customModule="Pinga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7cU-Vh-IyF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NSC-ik-Gid"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gYx-tq-0L2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Tk-p9-Csd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6553" y="681"/>
         </scene>
     </scenes>
     <resources>

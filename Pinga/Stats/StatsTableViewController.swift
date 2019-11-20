@@ -18,11 +18,13 @@ struct StatsListItem {
 }
 
 class StatsTableViewController: UITableViewController {
+    var ssid: String = ""
     var items: [StatsListItem] = [
-        StatsListItem(title: "Disponibilidade Semanal", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
-        StatsListItem(title: "Disponibilidade no Dia", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
-        StatsListItem(title: "Qualidade", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
-        StatsListItem(title: "Velocidade", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self)
+        StatsListItem(title: "Disponibilidade no Dia", identifier: "AvailabilityDayViewController", controller: AvailabilityDayViewController.self),
+        StatsListItem(title: "Disponibilidade na Semana", identifier: "AvailabilityWeekViewController", controller: AvailabilityWeekViewController.self),
+        StatsListItem(title: "Velocidade no Dia", identifier: "SpeedDayViewController", controller: SpeedDayViewController.self),
+        StatsListItem(title: "Velocidade na Semana", identifier: "SpeedWeekViewController", controller: SpeedWeekViewController.self)
+        
     ]
     //    let sb: UIStoryboard! = UIStoryboard(name: "Main", bundle: nil)
     

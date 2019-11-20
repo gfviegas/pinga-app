@@ -11,7 +11,13 @@
 		230BB00D234B58D9005EB911 /* StatsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB00C234B58D9005EB911 /* StatsDataService.swift */; };
 		230BB00F234B6E9A005EB911 /* StatsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB00E234B6E9A005EB911 /* StatsChart.swift */; };
 		230BB011234B9B3C005EB911 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BB010234B9B3C005EB911 /* Date.swift */; };
-		2311E77B236637D300534E28 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311E77A236637D300534E28 /* FirebaseManager.swift */; };
+		230E6A59238254AF00041952 /* NetworksAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A58238254AF00041952 /* NetworksAvailableViewController.swift */; };
+		230E6A5B2382551A00041952 /* NetworkAvailableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A5A2382551A00041952 /* NetworkAvailableTableViewCell.swift */; };
+		230E6A5D2382578D00041952 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A5C2382578D00041952 /* UIViewControllerExtension.swift */; };
+		230E6A5F23827DFE00041952 /* AvailabilityDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A5E23827DFE00041952 /* AvailabilityDayViewController.swift */; };
+		230E6A6123827FD200041952 /* SpeedDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A6023827FD200041952 /* SpeedDayViewController.swift */; };
+		230E6A632382806500041952 /* SpeedWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A622382806500041952 /* SpeedWeekViewController.swift */; };
+		230E6A6523828E0F00041952 /* ChartSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E6A6423828E0F00041952 /* ChartSettings.swift */; };
 		234E75CE233AE2C100C1F823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75CD233AE2C100C1F823 /* AppDelegate.swift */; };
 		234E75D0233AE2C100C1F823 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234E75CF233AE2C100C1F823 /* SceneDelegate.swift */; };
 		234E75D7233AE2C100C1F823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234E75D5233AE2C100C1F823 /* Main.storyboard */; };
@@ -81,7 +87,13 @@
 		230BB00C234B58D9005EB911 /* StatsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDataService.swift; sourceTree = "<group>"; };
 		230BB00E234B6E9A005EB911 /* StatsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsChart.swift; sourceTree = "<group>"; };
 		230BB010234B9B3C005EB911 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		2311E77A236637D300534E28 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		230E6A58238254AF00041952 /* NetworksAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworksAvailableViewController.swift; sourceTree = "<group>"; };
+		230E6A5A2382551A00041952 /* NetworkAvailableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAvailableTableViewCell.swift; sourceTree = "<group>"; };
+		230E6A5C2382578D00041952 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		230E6A5E23827DFE00041952 /* AvailabilityDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityDayViewController.swift; sourceTree = "<group>"; };
+		230E6A6023827FD200041952 /* SpeedDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedDayViewController.swift; sourceTree = "<group>"; };
+		230E6A622382806500041952 /* SpeedWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedWeekViewController.swift; sourceTree = "<group>"; };
+		230E6A6423828E0F00041952 /* ChartSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSettings.swift; sourceTree = "<group>"; };
 		234E75CA233AE2C100C1F823 /* Pinga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234E75CD233AE2C100C1F823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234E75CF233AE2C100C1F823 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,7 +203,6 @@
 				234E75DD233AE2C100C1F823 /* Info.plist */,
 				234E75CD233AE2C100C1F823 /* AppDelegate.swift */,
 				230BB010234B9B3C005EB911 /* Date.swift */,
-				2311E77A236637D300534E28 /* FirebaseManager.swift */,
 				239AC5212345224D00B870DD /* Notification.swift */,
 				234E75CF233AE2C100C1F823 /* SceneDelegate.swift */,
 				234E75D8233AE2C100C1F823 /* Assets.xcassets */,
@@ -200,6 +211,8 @@
 				234E75DA233AE2C100C1F823 /* LaunchScreen.storyboard */,
 				234E75D5233AE2C100C1F823 /* Main.storyboard */,
 				23A3F97F233E862C00AC4F25 /* Stats */,
+				230E6A5C2382578D00041952 /* UIViewControllerExtension.swift */,
+				230E6A6423828E0F00041952 /* ChartSettings.swift */,
 			);
 			path = Pinga;
 			sourceTree = "<group>";
@@ -226,6 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				23803827236659DF00EFF795 /* AvailabilityWeekViewController.swift */,
+				230E6A5E23827DFE00041952 /* AvailabilityDayViewController.swift */,
+				230E6A6023827FD200041952 /* SpeedDayViewController.swift */,
+				230E6A622382806500041952 /* SpeedWeekViewController.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -250,6 +266,8 @@
 				23A3F989233EA29A00AC4F25 /* StatsTableViewController.swift */,
 				23A3F98B233EA2CF00AC4F25 /* StatsTableViewCell.swift */,
 				230BB00E234B6E9A005EB911 /* StatsChart.swift */,
+				230E6A58238254AF00041952 /* NetworksAvailableViewController.swift */,
+				230E6A5A2382551A00041952 /* NetworkAvailableTableViewCell.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -540,6 +558,8 @@
 			files = (
 				239AC524234544EE00B870DD /* WiFiConnectionViewController.swift in Sources */,
 				234E760A233C3D3F00C1F823 /* InfoTableViewController.swift in Sources */,
+				230E6A5F23827DFE00041952 /* AvailabilityDayViewController.swift in Sources */,
+				230E6A5D2382578D00041952 /* UIViewControllerExtension.swift in Sources */,
 				23A3F98C233EA2CF00AC4F25 /* StatsTableViewCell.swift in Sources */,
 				239AC51E234265EA00B870DD /* BluetoothManager.swift in Sources */,
 				230BB00F234B6E9A005EB911 /* StatsChart.swift in Sources */,
@@ -547,18 +567,22 @@
 				230BB00D234B58D9005EB911 /* StatsDataService.swift in Sources */,
 				23A3F982233E868400AC4F25 /* ConnectionViewController.swift in Sources */,
 				230736E6235E2AB000386532 /* WiFiTableViewCell.swift in Sources */,
-				2311E77B236637D300534E28 /* FirebaseManager.swift in Sources */,
 				239AC5262346456700B870DD /* WiFiManager.swift in Sources */,
 				23A3F96C233C48A100AC4F25 /* InfoTableViewCell.swift in Sources */,
 				23A3F988233E88CD00AC4F25 /* InfoViewController.swift in Sources */,
 				234E75CE233AE2C100C1F823 /* AppDelegate.swift in Sources */,
 				234E75D0233AE2C100C1F823 /* SceneDelegate.swift in Sources */,
 				23A3F96E233D2EF000AC4F25 /* BLEDevicesTableViewController.swift in Sources */,
+				230E6A6123827FD200041952 /* SpeedDayViewController.swift in Sources */,
 				234E7606233C0F3000C1F823 /* TimeAvailableEntry.swift in Sources */,
+				230E6A632382806500041952 /* SpeedWeekViewController.swift in Sources */,
 				239AC5222345224D00B870DD /* Notification.swift in Sources */,
 				230BB011234B9B3C005EB911 /* Date.swift in Sources */,
 				23A3F98A233EA29A00AC4F25 /* StatsTableViewController.swift in Sources */,
+				230E6A5B2382551A00041952 /* NetworkAvailableTableViewCell.swift in Sources */,
 				23803828236659DF00EFF795 /* AvailabilityWeekViewController.swift in Sources */,
+				230E6A6523828E0F00041952 /* ChartSettings.swift in Sources */,
+				230E6A59238254AF00041952 /* NetworksAvailableViewController.swift in Sources */,
 				23A3F970233D2F1D00AC4F25 /* BLEDevicesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

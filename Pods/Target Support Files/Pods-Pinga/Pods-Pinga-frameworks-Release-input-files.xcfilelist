@@ -1,12 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-Pinga/Pods-Pinga-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/BlueCapKit/BlueCapKit.framework
-${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
-${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
-${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework
+${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework
+${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
-${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework
-${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework
-${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework
-${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
